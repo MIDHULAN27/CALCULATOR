@@ -1,0 +1,126 @@
+/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212; /* Deep background for contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Calculator Container */
+.calculator {
+    background-color: #2b2b2b; /* Charcoal background */
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 360px;
+}
+
+/* Display Field */
+#display {
+    width: 100%;
+    height: 80px;
+    background-color: #1a1a1a; /* Darker display */
+    color: #ffffff;
+    border: 2px solid #444; /* Distinct border */
+    border-radius: 10px;
+    font-size: 2.5rem;
+    text-align: right;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    font-family: 'Courier New', Courier, monospace; /* Distinct techy font */
+    opacity: 1; /* Override disabled opacity */
+    -webkit-text-fill-color: #fff;
+}
+
+/* Button Grid Setup */
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+/* General Button Styling */
+.btn {
+    border: none;
+    border-radius: 15px; /* Rounded corners */
+    padding: 18px 0;
+    font-size: 1.5rem;
+    font-family: inherit;
+    font-weight: 500;
+    cursor: pointer;
+    color: white;
+    background-color: #444444; /* Default gray for numbers */
+    transition: filter 0.15s ease, transform 0.1s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+/* Zero button spanning two columns */
+.btn.zero {
+    grid-column: span 2;
+    justify-content: flex-start;
+    padding-left: 25px;
+}
+
+/* Specific Button Colors */
+.btn.func {
+    background-color: #6a6a6a; /* Lighter gray for functions */
+}
+
+.btn.op {
+    background-color: #ff9f0a; /* Orange operators */
+}
+
+.btn.equals {
+    background-color: #ff9f0a;
+}
+
+/* Hover and Active States */
+.btn:hover {
+    filter: brightness(1.2); /* Brightens the button on hover */
+}
+
+.btn:active {
+    transform: scale(0.95); /* Slight shrink effect */
+    filter: brightness(0.9);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 400px) {
+    .calculator {
+        max-width: 100%;
+        margin: 15px;
+        padding: 15px;
+    }
+
+    #display {
+        height: 70px;
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .button-grid {
+        gap: 10px;
+    }
+
+    .btn {
+        padding: 15px 0;
+        font-size: 1.25rem;
+        border-radius: 12px;
+    }
+    
+    .btn.zero {
+        padding-left: 20px;
+    }
+}
